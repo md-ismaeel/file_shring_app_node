@@ -1,0 +1,16 @@
+{
+  "name": "file-sharing-app",
+  "version": "1.0.0",
+  "description": "fileSharing",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ismail",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.4.0"
+  }
+}
