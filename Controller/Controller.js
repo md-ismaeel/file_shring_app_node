@@ -26,6 +26,8 @@ const upload = multer({
     storage: storage,
 }).single("file"); // FieldName in your formate
 
+
+
 const uploadFiles = async (req, res) => {
     upload(req, res, async (err) => {
         if (err) {
@@ -39,7 +41,7 @@ const uploadFiles = async (req, res) => {
         // console.log("h", req.file);
 
         const newObj = new fileModel({
-            originalFileName: req.file.originalname,
+            originalFileName: req.file.originalName,
             newFileName: req.file.filename,
             path: req.file.path,
             size: req.file.size,
@@ -97,6 +99,7 @@ const downloadFile = async (req, res) => {
 
 const sendFile = async (req, res) => {
     try {
+        console.log(req.body);
         const { fileId, shareTo } = req.body;
         const downloadableLink = `http://localhost:10000/api/files/download/${fileId}`;
 
